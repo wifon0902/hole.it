@@ -72,12 +72,3 @@ The application will be available at `http://localhost:5173`
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 👥 Authors
-
-- Igor Kazior
-
-## 🙏 Acknowledgments
-
-- Special thanks to the open-source community for the amazing tools and libraries
- 
