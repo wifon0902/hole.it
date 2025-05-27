@@ -1,0 +1,47 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import Countdown from "@/components/countdown";
+import backgroundImage from "../assets/background.png";
+
+function Hero() {
+  return (
+    <div className="relative overflow-hidden h-[900px] text-zinc-100">
+      {/* Tło */}
+      <div
+        className="hidden md:block absolute top-0 left-0 h-full w-[200%] animate-scroll-pingpong z-0"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "auto 140%",
+          willChange: "transform",
+        }}
+      />
+
+      {/* Refleks */}
+      <div className="absolute top-1/2 left-1/2 w-350 h-350 rounded-full bg-white opacity-4 blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0" />
+
+      {/* Content */}
+      <div className="w-full max-w-7xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center px-4 flex flex-col items-center">
+        <h1 className="max-w-5xl text-zinc-200 text-3xl md:text-5xl font-bold uppercase">
+          Dołącz do lokalnej sceny esportowej i zmierz się z najlepszymi
+        </h1>
+        <p className="text-zinc-400 text-xl py-4">
+          Weź udział w turnieju CS2, pokaż swoje umiejętności i walcz o nagrody,
+          sławę i esportowy prestiż!
+        </p>
+        <Button
+          variant="accent"
+          size="lg"
+          className="rounded-xs my-10 uppercase"
+        >
+          Zapisz swoją drużynę!
+        </Button>
+
+        {/* Licznik */}
+        <Countdown targetDate="2025-06-13T12:00:00" />
+      </div>
+    </div>
+  );
+}
+
+export default Hero;
