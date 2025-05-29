@@ -30,14 +30,13 @@ function Navbar() {
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
             Kontakt
           </li>
+          <div className="hidden md:block ml-10">
+            <Button variant="accent" size="lg" className="rounded-xs">
+              <Rocket className="size-4" />
+              Wystartuj!
+            </Button>
+          </div>
         </ul>
-
-        <div className="hidden md:block">
-          <Button variant="accent" size="lg" className="rounded-xs">
-            <Rocket className="size-4" />
-            Wystartuj!
-          </Button>
-        </div>
 
         <div className="md:hidden z-50 cursor-pointer" onClick={handleNav}>
           {nav ? <X size={28} /> : <Menu size={28} />}
@@ -45,11 +44,11 @@ function Navbar() {
       </div>
 
       <div
-        className={`fixed top-0 left-0 w-[70%] sm:w-[50%] h-full bg-primary border-r border-zinc-800 text-white p-6 transition-all duration-300 z-40 ${
+        className={`fixed top-0 left-0 w-[80%] sm:w-[50%] h-full bg-primary border-r border-zinc-800 text-white p-6 transition-all duration-300 z-40 ${
           nav ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <h1 className="text-3xl font-bold text-indigo-600 mb-6">hole.it</h1>
+        <h1 className="text-3xl font-bold text-main-accent mb-6">hole.it</h1>
         <ul className="flex flex-col gap-4">
           <li className="border-b border-zinc-700 pb-2 cursor-pointer hover:text-zinc-400">
             Home
