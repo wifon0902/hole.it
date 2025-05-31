@@ -43,7 +43,7 @@ const Countdown = ({ targetDate }) => {
   ];
 
   return (
-    <div className="relative grid grid-cols-2 md:grid-cols-4 gap-4 text-6xl font-bold select-none md:pt-20">
+    <div className="relative grid grid-cols-2 md:grid-cols-4 gap-4 text-6xl font-bold select-none pb-10 md:py-10">
       {timeUnits.map((unit, index) => (
         <div
           key={index}

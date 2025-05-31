@@ -18,23 +18,20 @@ function Navbar() {
       <div className="max-w-7xl w-full flex justify-between items-center px-6 border-b border-zinc-700">
         <h1 className="text-3xl font-bold text-main-accent">hole.it</h1>
 
-        <ul className="hidden md:flex gap-10 uppercase text-zinc-300">
+        <ul className="hidden md:flex gap-6 lg:gap-10 uppercase text-zinc-300">
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            Home
+            <a href="#rules">Jak grać?</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            Jak grać?
+            <a href="">Drużyny</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            Drużyny
+            <a href="">Nagrody</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            Nagrody
+            <a href="">Kontakt</a>
           </li>
-          <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            Kontakt
-          </li>
-          <div className="hidden md:block ml-10">
+          <div className="hidden md:block pl-10">
             <Button variant="accent" size="lg" className="rounded-xs">
               <Rocket className="size-4" />
               Wystartuj!
@@ -62,9 +59,6 @@ function Navbar() {
       >
         <h1 className="text-3xl font-bold text-main-accent mb-6">hole.it</h1>
         <ul className="flex flex-col gap-4">
-          <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            <a href="">Home</a>
-          </li>
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
             <a href="">Jak grać?</a>
           </li>

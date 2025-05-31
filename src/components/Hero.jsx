@@ -22,7 +22,6 @@ function Hero() {
 
       {/* Content */}
       <div
-        id="home"
         className="w-full max-w-7xl text-center flex flex-col items-center z-10 pt-10"
       >
         <h1 className="max-w-6xl text-zinc-200 text-3xl md:text-5xl font-bold uppercase">
@@ -47,7 +46,7 @@ function Hero() {
           </Button>
         </div>
 
-        {/* Licznik */}
+        {/* Countdown */}
         <Countdown targetDate="2025-06-07T12:00:00" />
       </div>
     </div>
