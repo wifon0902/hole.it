@@ -26,16 +26,19 @@ function Cards() {
   return (
     <div
       id="rules"
-      className="bg-zinc-950 flex md:justify-center py-20 md:flex-row md:items-start items-center flex-col gap-8 p-8 text-center"
+      className="bg-zinc-950 flex justify-center flex-col py-20 p-8 text-center"
     >
-      {cardData.map((card, index) => (
-        <Card
-          key={index}
-          title={card.title}
-          description={card.description}
-          icon={card.icon}
-        />
-      ))}
+      <h1 className="text-5xl pb-10">Jak wziąć udział?</h1>
+      <div className="flex md:justify-center md:items-start md:flex-row items-center flex-col gap-8">
+        {cardData.map((card, index) => (
+          <Card
+            key={index}
+            title={card.title}
+            description={card.description}
+            icon={card.icon}
+          />
+        ))}
+      </div>
     </div>
   );
 }

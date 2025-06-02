@@ -129,7 +129,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: var(--color-zinc-950);
   font-family: play, sans-serif;
 }
 

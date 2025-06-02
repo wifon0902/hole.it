@@ -25,16 +25,18 @@ function Hero() {
           Dołącz do lokalnej sceny esportowej <br />i zmierz się z najlepszymi
         </h1>
         <p className="max-w-2xl text-zinc-300 text-xl mt-4">
-          Już 7 czerwca startuje Hole.it League więc nie przegap szansy na
+          Już 7 czerwca startuje hole.it League więc nie przegap szansy na
           udział i zapis swojej drużyny
         </p>
 
         {/* Buttons */}
 
         <div className="flex justify-center gap-6 py-16 px-4 flex-col md:flex-row">
-          <Button variant="accent" size="lg" className="rounded-xs uppercase">
-            Zapisz swoją drużynę!
-          </Button>
+          <a href="#form">
+            <Button variant="accent" size="lg" className="rounded-xs uppercase">
+              Zapisz swoją drużynę!
+            </Button>
+          </a>
           <a href="#rules">
             <Button
               variant="transparent"

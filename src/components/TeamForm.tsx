@@ -49,7 +49,7 @@ const defaultValues = {
   terms: false,
 };
 
-export default function TeamsForm() {
+export default function TeamForm() {
   async function createTeam(values: z.infer<typeof formSchema>) {
     const { data, error } = await supabase
       .from("teams")
@@ -90,7 +90,7 @@ export default function TeamsForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className=" space-y-8 max-w-3xl mx-auto py-10"
+        className="flex-2 space-y-6 max-w-3xl mx-auto py-10"
       >
         <FormField
           control={form.control}
@@ -160,7 +160,7 @@ export default function TeamsForm() {
               <FormLabel>Mapa</FormLabel>
               <Select onValueChange={field.onChange} value={field.value ?? ""}>
                 <FormControl>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Wybierz mapę" />
                   </SelectTrigger>
                 </FormControl>
@@ -172,7 +172,7 @@ export default function TeamsForm() {
                 </SelectContent>
               </Select>
               <FormDescription>
-                Wybierz mapę, na której będzie rozgrywany turniej
+                Wybierz mapę, na której chcesz grać
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -192,15 +192,23 @@ export default function TeamsForm() {
               <div className="space-y-1 leading-none">
                 <FormLabel>Akceptuję regulamin turnieju </FormLabel>
                 <FormDescription>
-                  Zaznaczając to oświadczasz, że zapoznałeś się z regulaminem
-                  oraz warunkami uczestnictwa.
+                  Zaznaczając to oświadczasz, że zapoznałeś się z{" "}
+                  <a className="text-main-accent-hover" href="#">
+                    regulaminem
+                  </a>{" "}
+                  oraz{" "}
+                  <a className="text-main-accent-hover" href="#">
+                    warunkami uczestnictwa.
+                  </a>
                 </FormDescription>
                 <FormMessage />
               </div>
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button variant="accent" className="rounded-xs" type="submit">
+          Zapisz
+        </Button>
       </form>
     </Form>
   );
