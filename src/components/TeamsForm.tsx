@@ -13,39 +13,76 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import { supabase } from "@/lib/supabase";
 
 const formSchema = z.object({
-  email: z.string(),
-  teamname: z.string().min(1).max(20),
-  captain: z.string().min(1).max(20),
-  player2: z.string().min(1).max(20),
-  player3: z.string().min(1).max(20),
-  player4: z.string().min(1).max(20),
-  player5: z.string().min(1).max(20),
+  email: z.string().email({ message: "Podaj poprawny adres email" }),
+  teamname: z
+    .string()
+    .min(1, { message: "Nazwa drużyny nie może być pusta" })
+    .max(20, { message: "Nazwa drużyny nie może mieć więcej niż 20 znaków" }),
+  captain: z
+    .string()
+    .min(1, { message: "Nick kapitana nie może być puste" })
+    .max(20, { message: "Nick kapitana nie może mieć więcej niż 20 znaków" }),
+  map: z.string().nonempty({ message: "Musisz wybrać mapę" }),
   terms: z.boolean().refine((val) => val === true, {
     message: "Musisz zaakceptować regulamin",
   }),
 });
 
+const defaultValues = {
+  email: "",
+  teamname: "",
+  captain: "",
+  map: "",
+  terms: false,
+};
+
 export default function TeamsForm() {
+  async function createTeam(values: z.infer<typeof formSchema>) {
+    const { data, error } = await supabase
+      .from("teams")
+      .insert([
+        {
+          email: values.email,
+          name: values.teamname,
+          captain: values.captain,
+          map: values.map,
+        },
+      ])
+      .single();
+
+    if (error) {
+      throw error;
+    }
+    return data;
+  }
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues,
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      console.log(values);
-      toast(
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-        </pre>
-      );
+      await createTeam(values);
+      console.log("Zapisano drużynę:", values);
+      toast.success("Witamy w grze 😈!");
+      form.reset(defaultValues);
     } catch (error) {
       console.error("Form submission error", error);
-      toast.error("Failed to submit the form. Please try again.");
+      toast.error("Nie udało się wysłać formularza. Spróbuj ponownie później.");
     }
   }
 
@@ -62,7 +99,12 @@ export default function TeamsForm() {
             <FormItem>
               <FormLabel>Adres email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" type="email" {...field} />
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  value={field.value ?? ""}
+                  onChange={field.onChange}
+                />
               </FormControl>
 
               <FormMessage />
@@ -77,7 +119,12 @@ export default function TeamsForm() {
             <FormItem>
               <FormLabel>Nazwa drużyny</FormLabel>
               <FormControl>
-                <Input placeholder="Nazwa" type="text" {...field} />
+                <Input
+                  placeholder="Nazwa"
+                  type="text"
+                  {...field}
+                  value={field.value ?? ""}
+                />
               </FormControl>
 
               <FormMessage />
@@ -92,7 +139,12 @@ export default function TeamsForm() {
             <FormItem>
               <FormLabel>Kapitan drużyny</FormLabel>
               <FormControl>
-                <Input placeholder="Gracz 1" type="text" {...field} />
+                <Input
+                  placeholder="Nick"
+                  type="text"
+                  {...field}
+                  value={field.value ?? ""}
+                />
               </FormControl>
 
               <FormMessage />
@@ -100,77 +152,32 @@ export default function TeamsForm() {
           )}
         />
 
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
-            <FormField
-              control={form.control}
-              name="player2"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Członkowie drużyny</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Gracz 2" type="text" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="col-span-6">
-            <FormField
-              control={form.control}
-              name="player3"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel></FormLabel>
-                  <FormControl>
-                    <Input placeholder="Gracz 3" type="" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
-            <FormField
-              control={form.control}
-              name="player4"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel></FormLabel>
-                  <FormControl>
-                    <Input placeholder="Gracz 4" type="text" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="col-span-6">
-            <FormField
-              control={form.control}
-              name="player5"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel></FormLabel>
-                  <FormControl>
-                    <Input placeholder="Gracz 5" type="text" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-        </div>
+        <FormField
+          control={form.control}
+          name="map"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Mapa</FormLabel>
+              <Select onValueChange={field.onChange} value={field.value ?? ""}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Wybierz mapę" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="mirage">Mirage</SelectItem>
+                  <SelectItem value="inferno">Inferno</SelectItem>
+                  <SelectItem value="nuke">Nuke</SelectItem>
+                  <SelectItem value="dust">Dust 2</SelectItem>
+                </SelectContent>
+              </Select>
+              <FormDescription>
+                Wybierz mapę, na której będzie rozgrywany turniej
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="terms"
