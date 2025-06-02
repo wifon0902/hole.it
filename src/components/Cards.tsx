@@ -26,7 +26,7 @@ function Cards() {
   return (
     <div
       id="rules"
-      className="flex md:justify-center my-10 md:flex-row md:items-start items-center flex-col gap-8 p-8 text-center"
+      className="bg-zinc-950 flex md:justify-center py-20 md:flex-row md:items-start items-center flex-col gap-8 p-8 text-center"
     >
       {cardData.map((card, index) => (
         <Card

@@ -21,20 +21,21 @@ function Hero() {
 
       {/* Content */}
       <div className="w-full max-w-7xl text-center flex flex-col items-center z-10 pt-10">
-        <h1 className="max-w-6xl text-zinc-200 text-3xl md:text-5xl font-bold uppercase">
-          Dołącz do lokalnej sceny esportowej i zmierz się z najlepszymi
+        <h1 className="max-w-6xl text-zinc-100 text-3xl md:text-5xl font-bold uppercase">
+          Dołącz do lokalnej sceny esportowej <br />i zmierz się z najlepszymi
         </h1>
-        <p className="max-w-2xl text-zinc-400 text-xl mt-4">
+        <p className="max-w-2xl text-zinc-300 text-xl mt-4">
           Już 7 czerwca startuje Hole.it League więc nie przegap szansy na
           udział i zapis swojej drużyny
         </p>
 
         {/* Buttons */}
-        <a href="#rules">
-          <div className="flex justify-center gap-6 py-16 px-4 flex-col md:flex-row">
-            <Button variant="accent" size="lg" className="rounded-xs uppercase">
-              Zapisz swoją drużynę!
-            </Button>
+
+        <div className="flex justify-center gap-6 py-16 px-4 flex-col md:flex-row">
+          <Button variant="accent" size="lg" className="rounded-xs uppercase">
+            Zapisz swoją drużynę!
+          </Button>
+          <a href="#rules">
             <Button
               variant="transparent"
               size="lg"
@@ -42,8 +43,8 @@ function Hero() {
             >
               Dowiedz się więcej
             </Button>
-          </div>
-        </a>
+          </a>
+        </div>
 
         {/* Countdown */}
         <Countdown targetDate="2025-06-07T12:00:00" />
