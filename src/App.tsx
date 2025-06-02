@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
+import TeamsForm from "./components/TeamsForm";
 import { Toaster } from "@/components/ui/sonner";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Cards />
+      <TeamsForm />
     </div>
   );
 };
