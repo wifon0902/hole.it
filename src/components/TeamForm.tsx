@@ -50,6 +50,17 @@ const defaultValues = {
 };
 
 export default function TeamForm() {
+  async function getTeamsCount(): Promise<number> {
+    const { data, error } = await supabase
+      .from("teams")
+      .select("id", { count: "exact" });
+
+    if (error) {
+      console.error("Błąd przy pobieraniu count:", error.message);
+    }
+
+    return data.length || 0;
+  }
   async function createTeam(values: z.infer<typeof formSchema>) {
     const { data, error } = await supabase
       .from("teams")
@@ -75,6 +86,11 @@ export default function TeamForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    const teamsCount = await getTeamsCount();
+    if (teamsCount >= 12) {
+      toast.error("Limit drużyn został osiągnięty. Spróbuj ponownie później");
+      return;
+    }
     try {
       await createTeam(values);
       console.log("Zapisano drużynę:", values);

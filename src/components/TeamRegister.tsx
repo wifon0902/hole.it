@@ -3,13 +3,13 @@ import TeamForm from "./TeamForm";
 function TeamRegister() {
   return (
     <div id="form" className="w-full flex justify-center items-center my-10">
-      <div className="relative max-w-7xl bg-[#130e0e] rounded-3xl px-10 flex flex-row items-center justify-between gap-10 overflow-hidden">
+      <div className="relative max-w-7xl bg-[#100d0c] rounded-xl px-10 flex flex-row items-center justify-between gap-10 overflow-hidden">
         <div className="flex flex-col gap-5 flex-3">
           <h3 className="text-6xl font-bold bg-gradient-to-r from-[#ec6227] to-[#ebb540] bg-clip-text text-transparent">
             hole.it League
           </h3>
           <p className="text-zinc-200 text-2xl">
-            To pierwsza edycja hole.it league – limit miejsc to tylko 10 drużyn
+            To pierwsza edycja hole.it league – limit miejsc to tylko 12 drużyn
           </p>
           <p className="text-zinc-400 text-lg">
             Masz ekipę, trochę wolnego czasu i odwagę wejść do gry? Dołącz do

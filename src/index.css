@@ -129,7 +129,14 @@
 }
 
 body {
-  background-color: var(--color-zinc-950);
+  background: linear-gradient(
+    to bottom,
+    var(--color-zinc-950),
+    var(--color-zinc-900)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  background-position: top 40px left;
   font-family: play, sans-serif;
 }
 

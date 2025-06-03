@@ -23,7 +23,7 @@ function Navbar() {
             <a href="#rules">Jak grać?</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            <a href="">Drużyny</a>
+            <a href="#teams">Drużyny</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
             <a href="">Nagrody</a>

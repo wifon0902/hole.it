@@ -26,9 +26,9 @@ function Cards() {
   return (
     <div
       id="rules"
-      className="bg-zinc-950 flex justify-center flex-col py-20 p-8 text-center"
+      className="flex justify-center flex-col py-20 p-8 text-center"
     >
-      <h1 className="text-5xl pb-10">Jak wziąć udział?</h1>
+      <h2 className="text-5xl pb-10 font-bold">Chcesz zagrać?</h2>
       <div className="flex md:justify-center md:items-start md:flex-row items-center flex-col gap-8">
         {cardData.map((card, index) => (
           <Card
