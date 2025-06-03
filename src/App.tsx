@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Cards from "./components/Cards";
 import TeamRegister from "./components/TeamRegister";
 import Teams from "./components/Teams";
+import Footer from "./components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Cards />
       <TeamRegister />
       <Teams />
+      <Footer />
     </div>
   );
 };

@@ -48,7 +48,7 @@ function Teams() {
         {teams.map((team) => (
           <div key={team.id} className="flex">
             <img className="h-44 rounded-sm" src={mapImage[team.map]} />
-            <div className="my-1 px-8 rounded-r-lg flex flex-col justify-around gap-2 bg-zinc-950">
+            <div className="my-1 px-8 rounded-r-lg flex flex-col justify-around gap-2 bg-zinc-950 w-full">
               <div className="space-y-1">
                 <h2 className="uppercase font-bold">{team.name}</h2>
                 <span className="flex items-center gap-2 text-muted-foreground text-sm">
