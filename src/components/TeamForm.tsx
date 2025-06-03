@@ -59,7 +59,7 @@ export default function TeamForm() {
       console.error("Błąd przy pobieraniu count:", error.message);
     }
 
-    return data.length || 0;
+    return data ? data.length : 0;
   }
   async function createTeam(values: z.infer<typeof formSchema>) {
     const { data, error } = await supabase

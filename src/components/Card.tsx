@@ -1,4 +1,10 @@
-function Card({ title, description, icon: Icon }) {
+type Card = {
+  title: string;
+  description: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+};
+
+function Card({ title, description, icon: Icon }: Card) {
   return (
     <div className="text-white flex flex-col justify-center items-center w-100 md:h-80 h-40 px-10 gap-4">
       <Icon className="hidden md:block mb-8 text-main-accent size-20 drop-shadow-[0_0_8px_rgba(255,113,0,0.5)]" />

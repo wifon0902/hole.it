@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-const Countdown = ({ targetDate }) => {
+interface CountdownProps {
+  targetDate: string | Date;
+}
+
+const Countdown = ({ targetDate }: CountdownProps) => {
   const [time, setTime] = useState({
     seconds: 0,
     minutes: 0,
