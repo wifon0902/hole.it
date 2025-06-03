@@ -26,10 +26,10 @@ function Navbar() {
             <a href="#teams">Drużyny</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            <a href="">Nagrody</a>
+            <a href="#">Nagrody</a>
           </li>
           <li className="p-2 cursor-pointer hover:text-zinc-400 transition-all">
-            <a href="">Kontakt</a>
+            <a href="#">Kontakt</a>
           </li>
           <div className="hidden md:block pl-10">
             <a href="#form">

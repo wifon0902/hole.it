@@ -44,7 +44,7 @@ function Teams() {
           w grze...
         </span>
       </h2>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10">
         {teams.map((team) => (
           <div key={team.id} className="flex">
             <img className="h-44 rounded-sm" src={mapImage[team.map]} />
