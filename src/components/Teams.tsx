@@ -33,6 +33,7 @@ function Teams() {
     const { data } = await supabase
       .from("teams")
       .select("*")
+      .order("status", { ascending: false })
       .order("created_at", { ascending: true });
     setTeams((data as Team[]) || []);
   }
