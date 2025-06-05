@@ -33,7 +33,7 @@ function Teams() {
     const { data } = await supabase
       .from("teams")
       .select("*")
-      .order("status", { ascending: false })
+      .eq("status", 1)
       .order("created_at", { ascending: true });
     setTeams((data as Team[]) || []);
   }
@@ -49,7 +49,7 @@ function Teams() {
         {teams.map((team) => (
           <div key={team.id} className="flex flex-row">
             <img
-              className="md:h-44 h-30 md:rounded-sm"
+              className="md:h-44 h-30 rounded-l-sm md:rounded-sm"
               src={mapImage[team.map]}
             />
             <div className="md:my-1 px-2 md:px-8 rounded-r-lg flex flex-col justify-around gap-2 w-full bg-zinc-950 ">

@@ -55,7 +55,7 @@ function Navbar() {
       )}
 
       <div
-        className={`fixed top-0 left-0 w-[80%] sm:w-[50%] h-full bg-primary border-r border-zinc-800 text-white p-6 transition-all duration-300 z-40 ${
+        className={`fixed top-0 left-0 w-[80%] sm:w-[50%] h-full bg-zinc-900 border-r border-zinc-800 text-white p-6 transition-all duration-300 z-40 ${
           nav ? "translate-x-0" : "-translate-x-full"
         }`}
       >
