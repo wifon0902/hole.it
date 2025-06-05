@@ -39,7 +39,7 @@ function Teams() {
   }
   return (
     <div id="teams" className="my-40 w-full flex flex-col items-center">
-      <h2 className="font-bold text-5xl pb-12">
+      <h2 className="text-center font-bold text-5xl pb-12">
         Drużyny{" "}
         <span className="bg-gradient-to-r from-[#ec6227] to-[#ebb540] bg-clip-text text-transparent">
           w grze...
@@ -47,9 +47,12 @@ function Teams() {
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10">
         {teams.map((team) => (
-          <div key={team.id} className="flex">
-            <img className="h-44 rounded-sm" src={mapImage[team.map]} />
-            <div className="my-1 px-8 rounded-r-lg flex flex-col justify-around gap-2 bg-zinc-950 w-full">
+          <div key={team.id} className="flex flex-row">
+            <img
+              className="md:h-44 h-30 md:rounded-sm"
+              src={mapImage[team.map]}
+            />
+            <div className="md:my-1 px-2 md:px-8 rounded-r-lg flex flex-col justify-around gap-2 w-full bg-zinc-950 ">
               <div className="space-y-1">
                 <h2 className="uppercase font-bold">{team.name}</h2>
                 <span className="flex items-center gap-2 text-muted-foreground text-sm">

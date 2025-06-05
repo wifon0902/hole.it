@@ -3,7 +3,7 @@ import TeamForm from "./TeamForm";
 function TeamRegister() {
   return (
     <div id="form" className="w-full flex justify-center items-center my-10">
-      <div className="relative max-w-7xl bg-[#100d0c] rounded-xl px-10 flex flex-row items-center justify-between gap-10 overflow-hidden">
+      <div className="relative max-w-7xl bg-[#171312] rounded-xl p-10 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden">
         <div className="flex flex-col gap-5 flex-3">
           <h3 className="text-6xl font-bold bg-gradient-to-r from-[#ec6227] to-[#ebb540] bg-clip-text text-transparent">
             hole.it League

@@ -132,17 +132,13 @@ html,
 body {
   overflow-x: hidden;
   touch-action: pan-y;
-}
-
-body {
   background: linear-gradient(
     to bottom,
     var(--color-zinc-950),
-    var(--color-zinc-900)
+    var(--color-zinc-800)
   );
   background-repeat: no-repeat;
   background-size: 100% 200%;
-  background-position: top 40px left;
   font-family: play, sans-serif;
 }
 
