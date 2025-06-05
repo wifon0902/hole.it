@@ -62,15 +62,17 @@ function Navbar() {
         <h1 className="text-3xl font-bold text-main-accent mb-6">hole.it</h1>
         <ul className="flex flex-col gap-4">
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            Jak grać?
+            <a href="#rules">Jak grać?</a>
           </li>
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            Drużyny
+            <a href="#teams">Drużyny</a>
           </li>
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            Nagrody
+            <a href="#">Nagrody</a>
           </li>
-          <li className=" hover:text-zinc-400">Kontakt</li>
+          <li className=" hover:text-zinc-400">
+            <a href="#">Kontakt</a>
+          </li>
         </ul>
       </div>
     </nav>

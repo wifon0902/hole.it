@@ -209,7 +209,10 @@ export default function TeamForm() {
                 <FormLabel>Akceptuję regulamin turnieju </FormLabel>
                 <FormDescription>
                   Zaznaczając to oświadczasz, że zapoznałeś się z{" "}
-                  <a className="text-main-accent-hover" href="#">
+                  <a
+                    className="text-main-accent-hover"
+                    href="https://media.discordapp.net/attachments/1308827049221161031/1379133921165443122/462761398_1125298005649135_532349431197869344_n.gif?ex=68426dcd&is=68411c4d&hm=6dc0fe8c55afbba1ac4583e5e9926e0800f6d0e9ac9d29a82beca21909cc5a6f&="
+                  >
                     regulaminem
                   </a>{" "}
                   oraz{" "}
