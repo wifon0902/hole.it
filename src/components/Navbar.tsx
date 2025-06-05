@@ -55,24 +55,22 @@ function Navbar() {
       )}
 
       <div
-        className={`fixed top-0 left-0 w-[80%] sm:w-[50%] h-full border-r border-zinc-800 text-white p-6 transition-all duration-300 z-40 bg-zinc-950 ${
+        className={`fixed top-0 left-0 w-[80%] sm:w-[50%] h-full bg-primary border-r border-zinc-800 text-white p-6 transition-all duration-300 z-40 ${
           nav ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <h1 className="text-3xl font-bold text-main-accent mb-6">hole.it</h1>
         <ul className="flex flex-col gap-4">
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            <a href="#rules">Jak grać?</a>
+            Jak grać?
           </li>
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            <a href="#teams">Drużyny</a>
+            Drużyny
           </li>
           <li className="border-b border-zinc-700 pb-2 hover:text-zinc-400">
-            <a href="#">Nagrody</a>
+            Nagrody
           </li>
-          <li className=" hover:text-zinc-400">
-            <a href="#">Kontakt</a>
-          </li>
+          <li className=" hover:text-zinc-400">Kontakt</li>
         </ul>
       </div>
     </nav>
