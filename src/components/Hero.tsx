@@ -49,7 +49,7 @@ function Hero() {
         </div>
 
         {/* Countdown */}
-        <Countdown targetDate="2025-06-07T12:00:00" />
+        <Countdown targetDate="2025-06-28T20:00:00" />
       </div>
     </div>
   );
